@@ -1,8 +1,68 @@
 {
+  "managers": [
+    {
+      "id": "12qw34er_21wq32ew",
+      "name": "Kate Brown"
+    },
+    {
+      "id": "15rt64rr_87yt57de",
+      "name": "Mary Anderson"
+    },
+    {
+      "id": "15oi98oy_38mn93hb",
+      "name": "Jill McBright"
+    }
+  ],
+  "industries": [
+    "Beauty",
+    "Health Care",
+    "Music",
+    "Sport",
+    "Metal Processing",
+    "Jewelry",
+    "Food",
+    "Alcohol"
+
+  ],
   "companies": [
     {
       "id": "12qw12qw_32wd42we",
-      "name": "Monroe Inc."
+      "name": "Monroe Inc.",
+      "country": "France",
+      "city": "Paris",
+      "industry": "Beauty",
+      "key_person": "Amy Monroe",
+      "key_person_phone": "+330122334455",
+      "key_person_email": "monroeB@gmail.com",
+      "manager": "Kate Brown",
+      "reason_type": "Debtor",
+      "reason_description": "This company is a debtor. It hasn't made a payment for the service."
+    },
+    {
+      "id": "wr23vf22qv_30td4f89",
+      "name": "Bach Corp.",
+      "country": "Austria",
+      "city": "Vienna",
+      "industry": "Music",
+      "key_person": "Straus Bach",
+      "key_person_phone": "+430122334455",
+      "key_person_email": "bachHall@gmail.com",
+      "manager": "Marry Anderson",
+      "reason_type": "Unprofessional",
+      "reason_description": "Major reason is that on several occasions their staff and senior managers were not willing to provide high level service to our customers, their procedures are not in line with the industry standards, they were not cooperating nor they are looking to improve their efficiency."
+    },
+    {
+      "id": "yb23cx22qp_30tc33xz",
+      "name": "Iron Core",
+      "country": "Germany",
+      "city": "Berlin",
+      "industry": "Metal Processing",
+      "key_person": "Karl Schmidt",
+      "key_person_phone": "+490122334455",
+      "key_person_email": "ironCore@gmail.com",
+      "manager": "Jill McBright",
+      "reason_type": "Debtor",
+      "reason_description": "Major reason is that on several occasions their staff and senior managers were not willing to provide high level service to our customers, their procedures are not in line with the industry standards, they were not cooperating nor they are looking to improve their efficiency."
     }
   ]
 }
