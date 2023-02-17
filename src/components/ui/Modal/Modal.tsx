@@ -1,7 +1,7 @@
 import React, { FC, CSSProperties, ReactNode, ReactElement, memo } from 'react';
+import { Button } from '../Button';
 import classNames from 'classnames/bind';
 import styles from './Modal.module.scss';
-import {Button} from "../Button";
 const cn = classNames.bind(styles);
 
 interface IModal {
