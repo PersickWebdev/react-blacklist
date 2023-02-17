@@ -1,0 +1,48 @@
+@import './src/styles/colors';
+@import './src/styles/variables';
+@import './src/styles/mixins';
+
+.modal {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  backdrop-filter: blur(12px);
+  background: rgba(8, 19, 62, 0.2);
+
+  opacity: 0;
+  visibility: hidden;
+  z-index: -1;
+
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 100;
+  }
+
+  &__content {
+    max-width: 500px;
+    width: 100%;
+    padding: 20px;
+    background-color: $white;
+  }
+
+  &__heading {
+    margin-bottom: 24px;
+    padding: 12px 0;
+    text-align: center;
+    border-bottom: 1px solid $black;
+    @include text(18px, 600, 100%, uppercase, none, $black);
+  }
+
+  &__children-box {
+    margin-bottom: 24px;
+  }
+}

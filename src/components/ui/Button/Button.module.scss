@@ -1,0 +1,113 @@
+@import './src/styles/colors';
+@import './src/styles/variables';
+@import './src/styles/mixins';
+
+.button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+    transition: $transition;
+    cursor: pointer;
+    @include text(14px, 600, 100%, uppercase, none, $black);
+
+    // BUTTON TYPE: PRIMARY DEFAULT
+    &.primary-default {
+        color: $black;
+        border: 1px solid $white;
+        background-color: $white;
+    }
+    &.primary-default:hover {
+        color: $white;
+        border: 1px solid $white;
+        background-color: $black;
+    }
+
+    // BUTTON TYPE: SECONDARY DEFAULT
+    &.secondary-default {
+        color: $white;
+        border: 1px solid $white;
+        //background-color: $black;
+        background-color: transparent;
+    }
+    &.secondary-default:hover {
+        color: $black;
+        border: 1px solid $white;
+        background-color: $white;
+    }
+
+    // BUTTON TYPE: PRIMARY SUCCESS
+    &.primary-success {
+        color: $black;
+        border: 1px solid $success;
+        background-color: $success;
+    }
+    &.primary-success:hover {
+        color: $success;
+        border: 1px solid $success;
+        background-color: $black;
+    }
+
+    // BUTTON TYPE: SECONDARY SUCCESS
+    &.secondary-success {
+        color: $success;
+        border: 1px solid $success;
+        //background-color: $black;
+        background-color: transparent;
+    }
+    &.secondary-success:hover {
+        color: $black;
+        border: 1px solid $success;
+        background-color: $success;
+    }
+
+    // BUTTON TYPE: PRIMARY WARNING
+    &.primary-warning {
+        color: $black;
+        border: 1px solid $warning;
+        background-color: $warning;
+    }
+    &.primary-warning:hover {
+        color: $warning;
+        border: 1px solid $warning;
+        background-color: $black;
+    }
+
+    // BUTTON TYPE: SECONDARY WARNING
+    &.secondary-warning {
+        color: $warning;
+        border: 1px solid $warning;
+        //background-color: $black;
+        background-color: transparent;
+    }
+    &.secondary-warning:hover {
+        color: $black;
+        border: 1px solid $warning;
+        background-color: $warning;
+    }
+
+    // BUTTON TYPE: PRIMARY ERROR
+    &.primary-error {
+        color: $black;
+        border: 1px solid $error;
+        background-color: $error;
+    }
+    &.primary-error:hover {
+        color: $error;
+        border: 1px solid $error;
+        background-color: $black;
+    }
+
+    // BUTTON TYPE: SECONDARY ERROR
+    &.secondary-error {
+        color: $error;
+        border: 1px solid $error;
+        //background-color: $black;
+        background-color: transparent;
+    }
+    &.secondary-error:hover {
+        color: $black;
+        border: 1px solid $error;
+        background-color: $error;
+    }
+}

@@ -1,0 +1,18 @@
+@import './src/styles/colors';
+@import './src/styles/variables';
+@import './src/styles/mixins';
+
+.footer {
+    padding: 12px 0;
+    background-color: $black;
+
+    & .container {
+        @include container();
+    }
+
+    &__copyrights {
+        @include text(22px, 900, 100%, uppercase, none, $white);
+        text-align: center;
+        letter-spacing: 8px;
+    }
+}

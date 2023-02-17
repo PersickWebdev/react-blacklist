@@ -1,0 +1,19 @@
+@import './src/styles/colors';
+@import './src/styles/variables';
+@import './src/styles/mixins';
+
+.header {
+    padding: 24px 0;
+    background-color: $black;
+
+    & .container {
+        @include container();
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__title {
+        @include text(32px, 900, 100%, uppercase, none, $white);
+    }
+}
