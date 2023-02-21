@@ -3,5 +3,9 @@
 @import './src/styles/mixins';
 
 .companies-list {
+  padding-top: 48px;
 
+  & .container {
+    @include container();
+  }
 }

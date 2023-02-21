@@ -1,6 +1,6 @@
-import React, { FC, CSSProperties, ReactElement, memo, useState, useEffect } from 'react';
+import React, { FC, ReactElement, memo, useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { Header, Footer } from './components/sections';
+import { Header, Footer, CompaniesList } from './components/sections';
 import { Modal } from './components/ui';
 import { Requests } from './api';
 import { setCompanies } from './storage/slices/companiesSlice';
@@ -11,7 +11,9 @@ import styles from './App.module.scss';
 import classNames from 'classnames/bind';
 const cn = classNames.bind(styles);
 
-export const App = memo(() => {
+interface IApp {}
+
+export const App: FC<IApp> = memo(({}: IApp): ReactElement => {
     const dispatch = useDispatch();
     const [ isModalActive, setIsModalActive ] = useState<boolean>(false);
     const [ errorMessage, setErrorMessage ] = useState<string>('');
@@ -55,7 +57,6 @@ export const App = memo(() => {
         }
     };
 
-
     useEffect(() => {
         fetchCompanies();
         fetchManagers();
@@ -65,10 +66,13 @@ export const App = memo(() => {
     return (
         <div className={cn('app')}>
             <Header/>
-            <div className={cn('app__main')}>
 
+            <div className={cn('app__main')}>
+                <CompaniesList/>
             </div>
+
             <Footer/>
+
             <Modal
                 isModalActive={isModalActive}
                 setIsModalActive={setIsModalActive}

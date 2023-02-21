@@ -1,0 +1,56 @@
+@import './src/styles/colors';
+@import './src/styles/variables';
+@import './src/styles/mixins';
+
+.companies-list__item {
+  margin-bottom: 24px;
+  border-radius: 6px;
+  border: 1px solid $black;
+
+  &-heading {
+    padding: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    background-color: $black;
+    @include text(16px, 600, 100%, none, none, $white);
+  }
+
+  &-content {
+    padding: 16px;
+    display: flex;
+  }
+
+  &-section {
+    width: 27%;
+  }
+
+  &-section:not(:last-child) {
+    margin-right: 16px;
+  }
+
+  &-section.image-box {
+    width: 120px;
+    height: 120px;
+    margin-right: 16px;
+    border: 1px solid $black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-section-row {
+    display: flex;
+    align-items: center;
+  }
+
+  &-section-row:not(:last-child) {
+    margin-bottom: 16px;
+  }
+
+  &-section-row.description {
+    height: 122px;
+    align-items: flex-start;
+    overflow-y: scroll;
+  }
+}
