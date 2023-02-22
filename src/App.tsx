@@ -1,6 +1,6 @@
 import React, { FC, ReactElement, memo, useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { Header, Footer, CompaniesList } from './components/sections';
+import { Header, Main, Footer } from './components/sections';
 import { Modal } from './components/ui';
 import { Requests } from './api';
 import { setCompanies } from './storage/slices/companiesSlice';
@@ -66,13 +66,8 @@ export const App: FC<IApp> = memo(({}: IApp): ReactElement => {
     return (
         <div className={cn('app')}>
             <Header/>
-
-            <div className={cn('app__main')}>
-                <CompaniesList/>
-            </div>
-
+            <Main/>
             <Footer/>
-
             <Modal
                 isModalActive={isModalActive}
                 setIsModalActive={setIsModalActive}

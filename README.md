@@ -46,26 +46,32 @@ DEV DEPENDENCIES
 |       |       |       |       index.ts
 |       |       |       |       Header.tsx
 |       |       |       |       Header.module.scss
-|       |       |
-|       |       |       |-- Search
+|       |       |       
+|       |       |       |-- Main
 |       |       |       |       index.ts
-|       |       |       |       Search.tsx
-|       |       |       |       Search.module.scss
-|       |       |
-|       |       |       |-- FilterBar
-|       |       |       |       index.ts
-|       |       |       |       FilterBar.tsx
-|       |       |       |       FilterBar.module.scss
-|       |       |
-|       |       |       |-- CompaniesList
-|       |       |       |       index.ts
-|       |       |       |       CompaniesList.tsx
-|       |       |       |       CompaniesList.module.scss
-|       |       |
+|       |       |       |       Main.tsx
+|       |       |       |       Main.module.scss
+|       |       |       |       |-- Search
+|       |       |       |       |       index.ts
+|       |       |       |       |       Search.tsx
+|       |       |       |       |       Search.module.scss
+|       |       |       |       |       |-- FilterBar
+|       |       |       |       |       |       index.
+|       |       |       |       |       |       FilterBar.tsx
+|       |       |       |       |       |       FilterBar.module.scss
+|       |       |       |       
+|       |       |       |       |-- CompaniesList
+|       |       |       |       |       index.ts
+|       |       |       |       |       CompaniesList.tsx
+|       |       |       |       |       CompaniiesList.module.scss
+|       |       |       |       |       |-- CompaniesListItem
+|       |       |       |       |       |       index.ts
+|       |       |       |       |       |       CompaniesListItem.tsx
+|       |       |       |       |       |       CompaniesList.module.scss
 |       |       |       |-- Footer
 |       |       |       |       index.ts
 |       |       |       |       Footer.tsx
-|       |       |       |       Footer.module.scss  
+|       |       |       |       Footer.module.scss 
 |       |           
 |       |       |-- ui
 |       |       |       |-- Modal
@@ -104,4 +110,9 @@ DEV DEPENDENCIES
 |       |-- types
 |       |       index.ts
 |       |       interfaces.ts
+|
+|       |-- styles
+|       |       colors.scss
+|       |       varibales.scss
+|       |       mixins.scss
 ```

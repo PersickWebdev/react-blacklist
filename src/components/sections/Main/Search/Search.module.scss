@@ -1,0 +1,15 @@
+@import '../../../../styles/colors';
+@import '../../../../styles/variables';
+@import '../../../../styles/mixins';
+
+.search {
+  margin-top: 48px;
+
+  & .container {
+    @include container();
+    padding-top: 16px;
+    padding-bottom: 16px;
+    border-radius: 6px;
+    background-color: $black;
+  }
+}

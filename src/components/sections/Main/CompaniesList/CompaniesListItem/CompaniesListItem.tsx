@@ -1,5 +1,5 @@
 import React, { FC, ReactElement, memo } from 'react';
-import { ICompany } from '../../../../types/interfaces';
+import { ICompany } from '../../../../../types/interfaces';
 import classNames from 'classnames/bind';
 import styles from './CompaniesListItem.module.scss';
 const cn = classNames.bind(styles);
