@@ -5,14 +5,44 @@
 .input-search {
 
   &__label {
-
+    display: flex;
+    position: relative;
   }
 
   &__element {
+    width: 100%;
     padding: 8px 16px;
     border: none;
     outline: none;
     border-radius: 6px;
     @include text(16px, 400, 100%, none, none, $black);
+  }
+
+  &__icon-box {
+    width: 64px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 1.5px;
+    right: 1px;
+    border: 1px solid $black;
+    border-radius: 6px;
+    background-color: $black;
+    cursor: pointer;
+    transition: $transition;
+  }
+
+  &__icon-box:hover {
+    background-color: $white;
+  }
+
+  &__icon {
+    fill: $white;
+  }
+
+  &__icon-box:hover &__icon {
+    fill: $black;
   }
 }

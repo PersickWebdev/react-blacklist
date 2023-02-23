@@ -7,12 +7,21 @@ const cn = classNames.bind(styles);
 
 interface ISearch {}
 
+const ExternalStyles = {
+    InputSearch_dimensions: {
+        width: '100%',
+    }
+}
+
 const Search: FC<ISearch> = memo(({}: ISearch): ReactElement => {
     const [ formData, setFormData ] = useState<ISearchFormData>({
         company: '',
     });
 
-    console.log('Search - formData: ', formData);
+    const onSubmitHandler = () => {
+        console.log('Search - formData: ', formData);
+    };
+
 
     return (
         <div className={cn('search')}>
@@ -22,6 +31,8 @@ const Search: FC<ISearch> = memo(({}: ISearch): ReactElement => {
                     name='company'
                     placeholder='Enter company name'
                     setFormData={setFormData}
+                    onSubmitHandler={onSubmitHandler}
+                    containerDimensions={ExternalStyles.InputSearch_dimensions}
                 />
             </div>
         </div>
