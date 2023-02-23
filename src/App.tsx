@@ -6,7 +6,6 @@ import { Requests } from './api';
 import { setCompanies } from './storage/slices/companiesSlice';
 import { setManagers } from './storage/slices/managersSlice';
 import { setIndustries } from './storage/slices/industriesSlice';
-import { ResponseErrorMessages } from './utils/errorMessages';
 import styles from './App.module.scss';
 import classNames from 'classnames/bind';
 const cn = classNames.bind(styles);
@@ -26,7 +25,7 @@ export const App: FC<IApp> = memo(({}: IApp): ReactElement => {
         }
 
         if (response.status === 400 || response.status === 500) {
-            setErrorMessage(ResponseErrorMessages.testMessage);
+            setErrorMessage('Error. Try again later.');
             setIsModalActive(true);
         }
     };
@@ -39,7 +38,7 @@ export const App: FC<IApp> = memo(({}: IApp): ReactElement => {
         }
 
         if (response.status === 400 || response.status === 500) {
-            setErrorMessage(ResponseErrorMessages.testMessage);
+            setErrorMessage('Error. Try again later.');
             setIsModalActive(true);
         }
     };
@@ -52,7 +51,7 @@ export const App: FC<IApp> = memo(({}: IApp): ReactElement => {
         }
 
         if (response.status === 400 || response.status === 500) {
-            setErrorMessage(ResponseErrorMessages.testMessage);
+            setErrorMessage('Error. Try again later.');
             setIsModalActive(true);
         }
     };

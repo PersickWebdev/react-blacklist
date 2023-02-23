@@ -16,3 +16,7 @@ export interface IManager {
     id: string;
     name: string;
 }
+
+export interface ISearchFormData {
+    company: string;
+}

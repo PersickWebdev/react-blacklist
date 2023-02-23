@@ -4,4 +4,15 @@
 
 .input-search {
 
+  &__label {
+
+  }
+
+  &__element {
+    padding: 8px 16px;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    @include text(16px, 400, 100%, none, none, $black);
+  }
 }
