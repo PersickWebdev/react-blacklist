@@ -56,11 +56,15 @@ const Search: FC<ISearch> = memo(({
         setSearchOptionsObject();
     };
 
-    const onKeyPressHandler = (event: React.KeyboardEvent<HTMLInputElement>) => {
-        if (event.key !== 'Enter') {
+    const onKeyUpHandler = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        if (event.key === 'Enter') {
             setSearchOptionsObject();
         }
     };
+
+    const clearValueHandler = () => {
+        setInputValue('');
+    }
 
     useEffect(() => {
         !isSearchActive && setInputValue('');
@@ -80,8 +84,15 @@ const Search: FC<ISearch> = memo(({
                     placeholder={placeholder}
                     value={inputValue ?? ''}
                     onChange={onChangeHandler}
-                    onKeyPress={onKeyPressHandler}
+                    onKeyUp={onKeyUpHandler}
                 />
+
+                {inputValue !== ''
+                    ?
+                    <p className={cn('input-search__clear-value')} onClick={clearValueHandler}>x</p>
+                    :
+                    <></>
+                }
 
                 <div
                     className={cn('input-search__icon-box')}

@@ -45,4 +45,18 @@
   &__icon-box:hover &__icon {
     fill: $black;
   }
+
+  &__clear-value {
+    padding: 6px;
+    position: absolute;
+    top: 1.5px;
+    right: 72px;
+    cursor: pointer;
+    transition: $transition;
+    color: $black;
+  }
+
+  &__clear-value:hover {
+    color: $grey-dark;
+  }
 }
