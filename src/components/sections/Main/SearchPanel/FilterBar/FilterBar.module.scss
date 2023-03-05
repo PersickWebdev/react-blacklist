@@ -1,0 +1,41 @@
+@import '../../../../../styles/colors';
+@import '../../../../../styles/variables';
+@import '../../../../../styles/mixins';
+
+.filter-bar {
+    display: flex;
+    align-items: center;
+
+    &.space-between {
+        justify-content: space-between;
+    }
+
+    &.flex-end {
+        justify-content: flex-end;
+    }
+
+    &__add {
+        @include text(16px, 400, 100%, none, none, $white);
+        padding: 8px;
+        cursor: pointer;
+        transition: $transition;
+    }
+
+    &__add:hover {
+        opacity: 0.5;
+    }
+
+    &__icon-box {
+        padding: 8px;
+        cursor: pointer;
+    }
+
+    &__icon {
+        fill: $white;
+        transition: $transition;
+    }
+
+    &__icon-box:hover &__icon {
+        opacity: 0.5;
+    }
+}

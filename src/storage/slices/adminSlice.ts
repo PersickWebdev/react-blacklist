@@ -7,7 +7,7 @@ interface IInitialState {
 const AdminSlice = createSlice({
     name: 'admin',
     initialState: {
-        isAdmin: false,
+        isAdmin: true,
     },
     reducers: {
         setAdmin: (state: IInitialState, action: PayloadAction<boolean>) => {

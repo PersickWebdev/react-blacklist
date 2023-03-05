@@ -12,7 +12,7 @@ interface ISearch {
     setSearchOptions: (state: {}) => void;
     isSearchActive: boolean;
     setIsSearchActive: (state: boolean) => void;
-    containerDimensions?: CSSProperties;
+    containerStyles?: CSSProperties
 }
 
 const Search: FC<ISearch> = memo(({
@@ -23,6 +23,7 @@ const Search: FC<ISearch> = memo(({
     setSearchOptions,
     isSearchActive,
     setIsSearchActive,
+    containerStyles,
 }: ISearch): ReactElement => {
     const [ inputValue, setInputValue ] = useState<string>('');
 
@@ -71,7 +72,7 @@ const Search: FC<ISearch> = memo(({
     }, [isSearchActive]);
 
     return (
-        <div className={cn('input-search')}>
+        <div className={cn('input-search')} style={containerStyles ? containerStyles : {}}>
             <label
                 className={cn('input-search__label')}
                 htmlFor={id}

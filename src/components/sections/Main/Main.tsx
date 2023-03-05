@@ -4,7 +4,7 @@ import classNames from 'classnames/bind';
 import { SearchPanel } from './SearchPanel';
 import { CompaniesList } from './CompaniesList';
 import { RootState } from '../../../storage/store';
-import { setCompanies, setFilteredCompanies } from '../../../storage/slices/companiesSlice';
+import { setFilteredCompanies } from '../../../storage/slices/companiesSlice';
 import { Utils } from '../../../utils';
 import styles from './Main.module.scss';
 const cn = classNames.bind(styles);

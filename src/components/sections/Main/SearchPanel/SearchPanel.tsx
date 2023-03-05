@@ -1,4 +1,5 @@
 import React, { FC, ReactElement, memo } from 'react';
+import { FilterBar } from './FilterBar';
 import { Search } from '../../../ui';
 import { StateKeys } from './SearchPanel.data';
 import classNames from 'classnames/bind';
@@ -9,6 +10,12 @@ interface ISearch {
     setSearchOptions: (state: {}) => void;
     isSearchActive: boolean;
     setIsSearchActive: (state: boolean) => void;
+}
+
+const ContainerStyles = {
+    search: {
+        marginBottom: '24px'
+    }
 }
 
 const SearchPanel: FC<ISearch> = memo(({ setSearchOptions, isSearchActive, setIsSearchActive }: ISearch): ReactElement => {
@@ -24,7 +31,9 @@ const SearchPanel: FC<ISearch> = memo(({ setSearchOptions, isSearchActive, setIs
                     setSearchOptions={setSearchOptions}
                     isSearchActive={isSearchActive}
                     setIsSearchActive={setIsSearchActive}
+                    containerStyles={ContainerStyles.search}
                 />
+                <FilterBar/>
             </div>
         </div>
     );
