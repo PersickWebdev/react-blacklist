@@ -1,16 +1,20 @@
-@import '../../../../../styles/colors';
-@import '../../../../../styles/variables';
-@import '../../../../../styles/mixins';
+@import 'src/styles/colors';
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
 
 .filter-bar {
-    display: flex;
-    align-items: center;
+    position: relative;
 
-    &.space-between {
+    &__content {
+        display: flex;
+        align-items: center;
+    }
+
+    &__content.space-between {
         justify-content: space-between;
     }
 
-    &.flex-end {
+    &__content.flex-end {
         justify-content: flex-end;
     }
 
