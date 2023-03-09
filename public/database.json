@@ -14,15 +14,38 @@
     }
   ],
   "industries": [
-    "Beauty",
-    "Health Care",
-    "Music",
-    "Sport",
-    "Metal Processing",
-    "Jewelry",
-    "Food",
-    "Alcohol"
-
+    {
+      "id": "45oi48ob_28mg93hb",
+      "name": "Beauty"
+    },
+    {
+      "id": "35oi49ob_28mg94hb",
+      "name": "Health Care"
+    },
+    {
+      "id": "26oi23ox_27mg93hb",
+      "name": "Music"
+    },
+    {
+      "id": "29oi22ox_17dg93rb",
+      "name": "Sport"
+    },
+    {
+      "id": "67oi32oy_28de94rb",
+      "name": "Metal Processing"
+    },
+    {
+      "id": "77op12ny_29de84sb",
+      "name": "Jewelry"
+    },
+    {
+      "id": "78pp13nm_30de80sb",
+      "name": "Food"
+    },
+    {
+      "id": "79po14nc_31de80sb",
+      "name": "Alcohol"
+    }
   ],
   "companies": [
     {
@@ -35,7 +58,20 @@
       "key_person_phone": "+330122334455",
       "key_person_email": "monroeB@gmail.com",
       "manager": "Kate Brown",
-      "reason_type": "Debtor",
+      "reason_type": "Scam",
+      "reason_description": "This company is a debtor. It hasn't made a payment for the service."
+    },
+    {
+      "id": "47gf15qw_89wbn09cv",
+      "name": "Adolf Industries",
+      "country": "Germany",
+      "city": "Berlin",
+      "industry": "Jewelry",
+      "key_person": "Adolf Durst",
+      "key_person_phone": "+330122334455",
+      "key_person_email": "adolfD@gmail.com",
+      "manager": "Kate Brown",
+      "reason_type": "Scam",
       "reason_description": "This company is a debtor. It hasn't made a payment for the service."
     },
     {
@@ -48,21 +84,61 @@
       "key_person_phone": "+430122334455",
       "key_person_email": "bachHall@gmail.com",
       "manager": "Marry Anderson",
+      "reason_type": "Debtor",
+      "reason_description": "Major reason is that on several occasions their staff and senior managers were not willing to provide high level service to our customers, their procedures are not in line with the industry standards, they were not cooperating nor they are looking to improve their efficiency."
+    },
+    {
+      "id": "nb93cx52dp_00ty32xz",
+      "name": "Carlo Gas.",
+      "country": "Italy",
+      "city": "Rome",
+      "industry": "Alcohol",
+      "key_person": "Carlo Gastello",
+      "key_person_phone": "+490122334455",
+      "key_person_email": "carloGas@gmail.com",
+      "manager": "Marry Anderson",
+      "reason_type": "Debtor",
+      "reason_description": "Major reason is that on several occasions their staff and senior managers were not willing to provide high level service to our customers, their procedures are not in line with the industry standards, they were not cooperating nor they are looking to improve their efficiency."
+    },
+    {
+      "id": "nx53cs54yo_40tr42bz",
+      "name": "BB's Burgers",
+      "country": "USA",
+      "city": "New York",
+      "industry": "Food",
+      "key_person": "Bill Dawn",
+      "key_person_phone": "+10122334455",
+      "key_person_email": "bbb@gmail.com",
+      "manager": "Jill McBright",
       "reason_type": "Unprofessional",
       "reason_description": "Major reason is that on several occasions their staff and senior managers were not willing to provide high level service to our customers, their procedures are not in line with the industry standards, they were not cooperating nor they are looking to improve their efficiency."
     },
     {
-      "id": "yb23cx22qp_30tc33xz",
-      "name": "Iron Core",
-      "country": "Germany",
-      "city": "Berlin",
-      "industry": "Metal Processing",
-      "key_person": "Karl Schmidt",
-      "key_person_phone": "+490122334455",
-      "key_person_email": "ironCore@gmail.com",
+      "id": "nw33cx57eo_30tt46bx",
+      "name": "Redwood Inc.",
+      "country": "Canada",
+      "city": "Vancouver",
+      "industry": "Sport",
+      "key_person": "Molly McWood",
+      "key_person_phone": "+10122334455",
+      "key_person_email": "redWood@gmail.com",
       "manager": "Jill McBright",
-      "reason_type": "Debtor",
+      "reason_type": "Unprofessional",
       "reason_description": "Major reason is that on several occasions their staff and senior managers were not willing to provide high level service to our customers, their procedures are not in line with the industry standards, they were not cooperating nor they are looking to improve their efficiency."
+    }
+  ],
+  "reasons": [
+    {
+      "id": "17po23cv_56uj22pl",
+      "name": "Scam"
+    },
+    {
+      "id": "10pe24cb_57uk23pp",
+      "name": "Debtor"
+    },
+    {
+      "id": "11pr25cn_58ul24pi",
+      "name": "Unprofessional"
     }
   ]
 }

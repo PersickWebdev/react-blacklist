@@ -6,6 +6,7 @@ import { Requests } from './api';
 import { setCompanies } from './storage/slices/companiesSlice';
 import { setManagers } from './storage/slices/managersSlice';
 import { setIndustries } from './storage/slices/industriesSlice';
+import { setReasons } from './storage/slices/reasonsSlice';
 import styles from './App.module.scss';
 import classNames from 'classnames/bind';
 const cn = classNames.bind(styles);
@@ -56,10 +57,24 @@ export const App: FC<IApp> = memo(({}: IApp): ReactElement => {
         }
     };
 
+    const fetchReasons = async () => {
+        const response = await Requests.reasons.getAll();
+
+        if (response.data.length) {
+            dispatch(setReasons(response.data));
+        }
+
+        if (response.status === 400 || response.status === 500) {
+            setErrorMessage('Error. Try again later.');
+            setIsModalActive(true);
+        }
+    };
+
     useEffect(() => {
         fetchCompanies();
         fetchManagers();
         fetchIndustries();
+        fetchReasons();
     }, []);
 
     return (

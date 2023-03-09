@@ -9,6 +9,13 @@ const cn = classNames.bind(styles);
 
 interface IFilterBar {}
 
+const ContainerStyles = {
+    filter: {
+        maxWidth: '320px',
+        width: '100%',
+    }
+}
+
 const FilterBar: FC<IFilterBar> = memo(({}: IFilterBar): ReactElement => {
     const { isAdmin } = useSelector((state: RootState) => state.admin);
     const [ isFilterOpened, setIsFilterOpened ] = useState<boolean>(false);
@@ -61,6 +68,7 @@ const FilterBar: FC<IFilterBar> = memo(({}: IFilterBar): ReactElement => {
             <Filter
                 isFilterOpened={isFilterOpened}
                 setIsFilterOpened={setIsFilterOpened}
+                containerStyles={ContainerStyles.filter}
             />
         </div>
     );

@@ -1,0 +1,15 @@
+@import 'src/styles/colors';
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.select__item {
+    padding: 8px;
+    border-radius: 6px;
+    @include text(14px, 400, 100%, none, none, $white);
+    transition: $transition;
+    cursor: pointer;
+    
+    &:hover {
+        background-color: $white-transparent;
+    }
+}

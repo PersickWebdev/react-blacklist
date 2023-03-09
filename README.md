@@ -88,6 +88,11 @@ DEV DEPENDENCIES
 |       |       |       |       index.ts
 |       |       |       |       Input.tsx
 |       |       |       |       Input.module.scss 
+|       |       |
+|       |       |       |-- Select
+|       |       |       |       index.ts
+|       |       |       |       Select.tsx
+|       |       |       |       Select.module.scss
 |             
 |       |-- hooks
 |       |       index.ts

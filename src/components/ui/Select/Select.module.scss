@@ -1,0 +1,63 @@
+@import 'src/styles/colors';
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.select {
+    &__label {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+
+    &__label-text {
+        margin-bottom: 8px;
+        @include text(16px, 400, 100%, none, none, $white);
+    }
+
+    &__element {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid $white;
+        border-radius: 6px;
+        outline: none;
+        cursor: pointer;
+        transition: $transition;
+    }
+
+    &__chevron {
+        position: absolute;
+        top: 38px;
+        right: 8px;
+        transition: $transition;
+        fill: $black;
+    }
+
+    &__chevron.rotated {
+        transform: rotate(180deg);
+    }
+
+    &__dropdown {
+        padding: 8px;
+        width: 100%;
+        position: absolute;
+        top: 57px;
+        left: 0;
+        border: 1px solid $white;
+        border-radius: 6px;
+        list-style: none;
+        background-color: $black;
+        z-index: 2;
+        overflow-y: scroll;
+        transition: $transition;
+
+        height: 0;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    &__dropdown.is-opened {
+        height: 256px;
+        visibility: visible;
+        opacity: 1;
+    }
+}

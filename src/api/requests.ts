@@ -16,5 +16,10 @@ export const Requests = {
         getAll: async () => {
             return await axios.get(Endpoints.industries);
         }
+    },
+    reasons: {
+        getAll: async () => {
+            return await axios.get(Endpoints.reasons);
+        }
     }
 }
