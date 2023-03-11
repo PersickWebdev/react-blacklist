@@ -1,4 +1,4 @@
-import React, { FC, ReactElement, CSSProperties, memo, useState, useRef } from 'react';
+import React, { FC, ReactElement, CSSProperties, memo, useState, useEffect, useRef } from 'react';
 import classNames from 'classnames/bind';
 import { SelectItem } from './SelectItem';
 import { Icons } from '../Icons';
@@ -12,6 +12,7 @@ interface ISelect {
     label: string;
     placeholder: string;
     dropdownItems: any;
+    setFormData: (state: any) => void;
     containerStyles?: CSSProperties;
 }
 
@@ -21,16 +22,13 @@ const Select: FC<ISelect> = memo(({
     label,
     placeholder,
     dropdownItems,
+    setFormData,
     containerStyles,
 }: ISelect): ReactElement => {
     const [ inputValue, setInputValue ] = useState<string>('');
     const [ isDropdownOpened, setIsDropdownOpened ] = useState<boolean>(false);
 
     const selectRef = useRef<HTMLDivElement>(null);
-
-    const onChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setInputValue(event.target.value);
-    };
 
     const dropdownHandler = () => {
         setIsDropdownOpened(!isDropdownOpened);
@@ -44,7 +42,10 @@ const Select: FC<ISelect> = memo(({
         return (
             <SelectItem
                 key={item.id}
-                name={item.name}
+                name={name}
+                label={item.name}
+                setInputValue={setInputValue}
+                setFormData={setFormData}
                 closeDropdown={closeDropdown}
             />
         )
@@ -57,7 +58,6 @@ const Select: FC<ISelect> = memo(({
             className={cn('select')}
             style={containerStyles ? containerStyles : {}}
             ref={selectRef}
-            onClick={dropdownHandler}
         >
             <label
                 className={cn('select__label')}
@@ -72,7 +72,7 @@ const Select: FC<ISelect> = memo(({
                     name={name}
                     placeholder={placeholder}
                     value={inputValue ?? ''}
-                    onChange={onChangeHandler}
+                    onClick={dropdownHandler}
                     readOnly={true}
                 />
 

@@ -5,12 +5,32 @@ const cn = classNames.bind(styles);
 
 interface ISelectItem {
     name: string;
-    closeDropdown: (state: boolean) => void;
+    label: string;
+    setInputValue: (state: string) => void;
+    setFormData: (state: any) => void;
+    closeDropdown: () => void;
 }
 
-const SelectItem: FC<ISelectItem> = memo(({ name, closeDropdown }: ISelectItem): ReactElement => {
-    const onClickHandler = () => {
-        closeDropdown(false);
+const SelectItem: FC<ISelectItem> = memo(({
+    name,
+    label,
+    setInputValue,
+    setFormData,
+    closeDropdown,
+}: ISelectItem): ReactElement => {
+
+    const onClickHandler = (event: React.MouseEvent<HTMLLIElement>) => {
+        event.preventDefault();
+        event.stopPropagation();
+
+        setInputValue(label);
+        closeDropdown();
+        setFormData((state: any) => {
+            return {
+                ...state,
+                [name]: label,
+            }
+        });
     };
 
     return (
@@ -18,7 +38,7 @@ const SelectItem: FC<ISelectItem> = memo(({ name, closeDropdown }: ISelectItem):
             className={cn('select__item')}
             onClick={onClickHandler}
         >
-            {name}
+            {label}
         </li>
     );
 });
