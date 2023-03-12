@@ -1,0 +1,67 @@
+@import 'src/styles/colors';
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.checkbox {
+    &__label {
+        padding: 8px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        cursor: pointer;
+    }
+
+    &__label-text {
+        @include text(16px, 400, 100%, none, none, $white);
+    }
+
+    &__label.is-reversed &__label-text {
+        margin-left: 32px;
+    }
+
+    &__element {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+    }
+
+    &__checkmark {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 18px;
+        height: 18px;
+        border: 1px solid $white;
+        border-radius: 4px;
+        background-color: $black;
+    }
+
+    &__label.is-reversed &__checkmark {
+        top: 0;
+        left: 0;
+    }
+
+    &__label.is-reversed &__checkmark:after {
+        top: 4px;
+        left: 4px;
+    }
+
+    &__checkmark:after {
+        content: '';
+        width: 8px;
+        height: 8px;
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        background-color: $white;
+        border-radius: 2px;
+        transition: $transition;
+        opacity: 0;
+    }
+
+    &__label .checkbox__element:checked ~ .checkbox__checkmark:after {
+        opacity: 1;
+    }
+}

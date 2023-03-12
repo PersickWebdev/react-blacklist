@@ -11,6 +11,7 @@ interface ISelect {
     name: string;
     label: string;
     placeholder: string;
+    value: string;
     dropdownItems: any;
     setFormData: (state: any) => void;
     containerStyles?: CSSProperties;
@@ -21,6 +22,7 @@ const Select: FC<ISelect> = memo(({
     name,
     label,
     placeholder,
+    value,
     dropdownItems,
     setFormData,
     containerStyles,
@@ -71,7 +73,7 @@ const Select: FC<ISelect> = memo(({
                     id={id}
                     name={name}
                     placeholder={placeholder}
-                    value={inputValue ?? ''}
+                    value={value ?? inputValue}
                     onClick={dropdownHandler}
                     readOnly={true}
                 />

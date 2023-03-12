@@ -56,7 +56,7 @@
     }
 
     &__dropdown.is-opened {
-        height: 150px;
+        height: auto;
         visibility: visible;
         opacity: 1;
     }
