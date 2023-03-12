@@ -2,7 +2,7 @@
 @import 'src/styles/variables';
 @import 'src/styles/mixins';
 
-.select {
+.select-multiple {
 
     &__label {
         display: flex;
@@ -30,7 +30,7 @@
         top: 38px;
         right: 8px;
         transition: $transition;
-        fill: $black;
+        fill: black;
     }
 
     &__chevron.rotated {
@@ -38,8 +38,8 @@
     }
 
     &__dropdown {
-        padding: 8px;
         width: 100%;
+        padding: 8px;
         position: absolute;
         top: 57px;
         left: 0;
