@@ -1,7 +1,9 @@
 import React, { FC, ReactElement, CSSProperties, memo, useState, useRef } from 'react';
 import classNames from 'classnames/bind';
+import { SelectMultipleItem } from './SelectMultipleItem';
 import { Icons } from '../Icons';
 import { useClickOutside } from '../../../hooks';
+import { IReason } from '../../../types/interfaces';
 import styles from './SelectMultiple.module.scss';
 const cn = classNames.bind(styles);
 
@@ -11,6 +13,9 @@ interface ISelectMultiple {
     label: string;
     value: Array<string>;
     placeholder: string;
+    dropdownItems: Array<IReason>;
+    formData: any;
+    setFormData: (state: any) => void;
     containerStyles?: CSSProperties;
 }
 
@@ -20,6 +25,9 @@ const SelectMultiple: FC<ISelectMultiple> = memo(({
     label,
     value,
     placeholder,
+    dropdownItems,
+    formData,
+    setFormData,
     containerStyles,
 }: ISelectMultiple): ReactElement => {
     const [ inputValue, setInputValue ] = useState<Array<string>>([]);
@@ -35,7 +43,19 @@ const SelectMultiple: FC<ISelectMultiple> = memo(({
         setIsDropdownOpened(false);
     };
 
-    // Todo: dropdownElements
+    const dropdownElements = dropdownItems.map((item: IReason) => {
+        return (
+            <SelectMultipleItem
+                key={item.id}
+                id={item.id}
+                name={name}
+                label={item.name}
+                formData={formData}
+                setFormData={setFormData}
+                reversedElements={false}
+            />
+        )
+    });
 
     useClickOutside(selectRef, closeDropdown);
 
@@ -62,11 +82,11 @@ const SelectMultiple: FC<ISelectMultiple> = memo(({
                 />
 
                 {Icons.chevronUp({
-                    className: `${cn('select__chevron', { 'rotated': isDropdownOpened })}`
+                    className: `${cn('select-multiple__chevron', { 'rotated': isDropdownOpened })}`
                 })}
 
-                <ul className={cn('select__dropdown', { 'is-opened': isDropdownOpened })}>
-                    {/*Todo: dropdownElements*/}
+                <ul className={cn('select-multiple__dropdown', { 'is-opened': isDropdownOpened })}>
+                    {dropdownElements}
                 </ul>
             </label>
         </div>

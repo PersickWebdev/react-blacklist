@@ -1,7 +1,7 @@
 import React, { FC, ReactElement, CSSProperties, memo, useState } from 'react';
 import classNames from 'classnames/bind';
 import { useSelector } from 'react-redux';
-import { Button, Select, Checkbox } from '../../../../../ui';
+import { Button, Select, Checkbox, SelectMultiple } from '../../../../../ui';
 import { RootState } from '../../../../../../storage/store';
 import { IFilterFormData } from './Filter.types';
 import styles from './Filter.module.scss';
@@ -73,21 +73,16 @@ const Filter: FC<IFilter> = memo(({
                     setFormData={setFormData}
                     containerStyles={ContainerStyles.select}
                 />
-                <Checkbox
-                    id='select-reasons-01'
+                <SelectMultiple
+                    id='select-reasons'
                     name='reasons'
-                    label='Item #01'
-                    isChecked={formData.reasons.some((item: string) => item === 'Item #01')}
-                    reversedElements={false}
+                    label='Reason:'
+                    value={formData.reasons}
+                    placeholder='Select reasons'
+                    dropdownItems={reasons}
+                    formData={formData}
                     setFormData={setFormData}
-                />
-                <Checkbox
-                    id='select-reasons-02'
-                    name='reasons'
-                    label='Item #02'
-                    isChecked={formData.reasons.some((item: string) => item === 'Item #02')}
-                    reversedElements={false}
-                    setFormData={setFormData}
+                    containerStyles={ContainerStyles.select}
                 />
             </form>
             <div className={cn('filter__actions')}>
